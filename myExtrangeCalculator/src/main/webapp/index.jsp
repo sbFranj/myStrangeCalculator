@@ -1,6 +1,11 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ page import="myExtrangeCalculator.Calculator"%>
+    <%@ page import="java.util.ArrayList"%>
+    <%@ page import="java.util.List"%>
+    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,21 +28,22 @@
 </head>
 <body>
 	<%
-	//int n = (request.getParameter("n")).equals("")? 0:Integer.parseInt(request.getParameter("n"));
 	String area = request.getParameter("area");
 	String n = request.getParameter("n");
 	String op = request.getParameter("op");
-	//int op = Integer.parseInt(request.getParameter("op"));
 	String b = request.getParameter("b");
 	
 	if(b!=null && b.equals("send")){
-		area=Calculator.send(area, n)+op;
+		area=Calculator.send(area, n,op);
+		
 	}else if(b!=null && b.equals("reset")){
 		area="";
+		
 	}else if(b!=null && b.equals("solve")){
 		area=Calculator.solve(area);
 	}
 	%>
+	
 	<form method="get" action="index.jsp" >
 		<textarea rows="3" cols="40" name="area"><%=area%></textarea>
 		<br>
