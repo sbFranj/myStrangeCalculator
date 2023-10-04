@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class aaaa {
+public class aaaa {//esta clase fue creada para probar metodos y comportamientos de la calculadora
 
 	public static void main(String[] args) {
 		
