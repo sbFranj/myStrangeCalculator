@@ -31,22 +31,23 @@
 </head>
 <body>
 	<%
+	//declaramos e inicializamos las variables a recoger del form
 	String area = request.getParameter("area");
 	String n = request.getParameter("n");
 	String op = request.getParameter("op");
 	String b = request.getParameter("b");
-	
+	//cremos el objeto calculadora
 	Calculator c = new Calculator();
 	
-	if(b!=null && b.equals("send")){
+	if(b!=null && b.equals("send")){//si el boton no manda nulo y le damos a send nos añade los parametros que recoge
 		area=Calculator.send(area, n,op);
 		c.add(op,n);
 		
-	}else if(b!=null && b.equals("reset")){
+	}else if(b!=null && b.equals("reset")){//si el boton no manda nulo y recoge un reset borra tanto la lista como el textarea
 		area="";
 		c.clear();
 		
-	}else if(b!=null && b.equals("solve")){
+	}else if(b!=null && b.equals("solve")){//si el boton no recoge nulo y recoge un solve envia a la clase java calculator para que alli aplique la logica indicada
 		area=Calculator.solve(area);
 	}
 	%>
