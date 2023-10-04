@@ -10,17 +10,20 @@ public class aaaa {
 		
 		List<String> tmp = new ArrayList<>();
 		
-		tmp.add("+4");
-		tmp.add("+2");
-		tmp.add("-2");
-		tmp.add("-2");
-		tmp.add("10");
-		tmp.add("1");
-		tmp.add("-100");
-		
+		String area = "10+10-5+0";
+		String t ="";
 		System.out.println(tmp);
-		
-		int resultado = 0;
+		for(int i =0; i<area.length();i++) {
+			if(area.charAt(i)=='+' || area.charAt(i)=='-') {
+				tmp.add(area.charAt(i)+"");
+				tmp.add(t);
+				t="";
+			}else {
+				t+=area.charAt(i);
+			}
+		}
+		System.out.println(tmp);
+		/*int resultado = 0;
 		Iterator<String> it = tmp.iterator();
 		while(it.hasNext()) {
 			String t = it.next();
@@ -36,12 +39,8 @@ public class aaaa {
 		
 		System.out.println(resultado);
 		
-	
-		String prueba = "+10+10-5";
-		int tmp1 = 0;
-		String op[] = prueba.split("+");
+		 */
 		
-		System.out.println(op[0]);
 
 	}
 

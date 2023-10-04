@@ -22,6 +22,9 @@
 	button{
 		margin-left: 10%
 	}
+	h1{
+		text-align: center;
+	}
 	
 	
 </style>
@@ -33,17 +36,21 @@
 	String op = request.getParameter("op");
 	String b = request.getParameter("b");
 	
+	Calculator c = new Calculator();
+	
 	if(b!=null && b.equals("send")){
 		area=Calculator.send(area, n,op);
+		c.add(op,n);
 		
 	}else if(b!=null && b.equals("reset")){
 		area="";
+		c.clear();
 		
 	}else if(b!=null && b.equals("solve")){
 		area=Calculator.solve(area);
 	}
 	%>
-	
+	<h1>My Strange Calculator</h1>
 	<form method="get" action="index.jsp" >
 		<textarea rows="3" cols="40" name="area"><%=area%></textarea>
 		<br>
